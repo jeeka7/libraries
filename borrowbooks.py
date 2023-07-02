@@ -1,11 +1,12 @@
 import streamlit as st
 st.write("Library management System")
 
-mydb = mysql.connector.connect(
-host='ip-172-31-25-66',
-user='sql12629961',
-password='C6iCpjmcus',
-database='sql12629961'
-)
-mycursor=mydb.cursor()
-st.write("connection to free database successful")
+# Initialize connection.
+conn = st.experimental_connection('mysql', type='sql')
+
+# Perform query.
+df = conn.query('SELECT * from library;', ttl=600)
+
+# Print results.
+for row in df.itertuples():
+    st.write(f"{row.bookname} has a :{row.fine}:")
