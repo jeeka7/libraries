@@ -7,3 +7,12 @@ conn = mysql.connector.connect(host='sql12.freemysqlhosting.net',database='sql12
 
 if conn.is_connected():
     st.write("Connection established")
+cursor = conn.cursor()
+cursor.execute("SELECT * FROM library")
+data = cursor.fetchall()
+count = cursor.rowcount
+st.write("total rows obtained",count)
+for row in data:
+    print(row)
+
+conn.close()
