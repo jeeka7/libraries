@@ -14,9 +14,5 @@ cursor.execute(query1)
 data = cursor.fetchall()
 df = pd.DataFrame(data)
 st.write(df)
-count = cursor.rowcount
-st.write("total rows obtained",count)
-for row in data:
-    st.write(row)
 
 conn.close()
