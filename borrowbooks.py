@@ -15,8 +15,5 @@ count = cursor.rowcount
 st.write("total rows obtained",count)
 for row in data:
     st.write(row)
-conn = st.experimental_connection("sql")
-df = conn.query("select * from library")
-st.dataframe(df)
-st.write(df)
+
 conn.close()
