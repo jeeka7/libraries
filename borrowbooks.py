@@ -13,7 +13,7 @@ query1 = "Select * from library"
 cursor.execute(query1)
 data = cursor.fetchall()
 df = pd.DataFrame(data)
-dict = {0:'Bookname',1:'Renewaldate',2:'renewalsleft,3:'Libraryname',4:'issuedate',5:'daysleft',6:'fine'}
+dict = {0:'Bookname',1:'Renewaldate',2:'renewalsleft',3:'Libraryname',4:'issuedate',5:'daysleft',6:'fine'}
 df.rename(columns = dict, inplace = True)
 st.write(df)
 
