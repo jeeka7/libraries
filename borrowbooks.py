@@ -1,12 +1,9 @@
 import streamlit as st
+import mysql.connector
 st.write("Library management System")
 
 # Initialize connection.
-conn = st.experimental_connection('sql12629961', type='sql')
+conn = mysql.connector.connect(host='ip-172-31-25-66', password='C6iCpjmcus',user='sql12629961')
 
-# Perform query.
-df = conn.query('SELECT * from library;', ttl=600)
-
-# Print results.
-for row in df.itertuples():
-    st.write(f"{row.bookname} has a :{row.fine}:")
+if conn.is_connected():
+    st.write("Connection established")
