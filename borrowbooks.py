@@ -1,5 +1,6 @@
 import streamlit as st
 import mysql.connector
+import pandas as pd
 st.write("Library management System")
 
 # Initialize connection.
@@ -11,6 +12,8 @@ cursor = conn.cursor()
 query1 = "Select * from library"
 cursor.execute(query1)
 data = cursor.fetchall()
+df = pd.DataFrame(data)
+st.write(df)
 count = cursor.rowcount
 st.write("total rows obtained",count)
 for row in data:
