@@ -8,7 +8,7 @@ conn = mysql.connector.connect(host='sql12.freemysqlhosting.net',database='sql12
 if conn.is_connected():
     st.write("Connection established")
 cursor = conn.cursor()
-query1 = "Select * from Library"
+query1 = "Select * from library"
 cursor.execute(query1)
 data = cursor.fetchall()
 count = cursor.rowcount
