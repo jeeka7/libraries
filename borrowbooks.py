@@ -13,6 +13,6 @@ data = cursor.fetchall()
 count = cursor.rowcount
 st.write("total rows obtained",count)
 for row in data:
-    print(row)
+    st.write(row)
 
 conn.close()
