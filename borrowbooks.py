@@ -9,7 +9,7 @@ if conn.is_connected():
     st.write("Connection established")
 cursor = conn.cursor()
 query1 = "Select * from Library"
-cursor.execute("query1")
+cursor.execute(query1)
 data = cursor.fetchall()
 count = cursor.rowcount
 st.write("total rows obtained",count)
